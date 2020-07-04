@@ -1,6 +1,9 @@
 # docker-registry-ui
 Angular project for Docker Registry UI
 
+# Build
+Please run `docker build -t docker-registry-ui .`
+
 # CLI Detail
 ```
      _                      _                 ____ _     ___
