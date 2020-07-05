@@ -5,11 +5,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 
 const MaterialModules = [
   MatFormFieldModule,
   MatSliderModule,
   MatPaginatorModule,
+  MatTableModule
 ];
 
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';

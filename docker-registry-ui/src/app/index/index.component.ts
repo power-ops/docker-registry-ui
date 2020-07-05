@@ -9,8 +9,6 @@ import {DockerService} from '../services/docker.service';
 export class IndexComponent implements OnInit {
   repositories = [];
   repos = {};
-  tableConfig = {search: true};
-  // columns = [{prop: 'Repository'}];
   columns = ['Repositories'];
 
 
@@ -19,11 +17,10 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.docker.Catalog().subscribe((data) => {
-        this.repositories = data['repositories'];
-        // data['repositories'].map((r) => {
-        //   this.repositories.push(r);
-        //   console.log(this.repositories);
-        // });
+        // this.dataSource.paginator = data['repositories'];
+        data['repositories'].map((r) => {
+          this.repositories.push({position: 1, Repositories: r, weight: 1.0079, symbol: 'H'});
+        });
       }
     );
   }
