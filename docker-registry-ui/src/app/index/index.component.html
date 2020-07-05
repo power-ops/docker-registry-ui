@@ -1,1 +1,12 @@
-<p>index works!</p>
+<!--<element-table-->
+<!--  [Config]="tableConfig"-->
+<!--  [Rows]="repositories"-->
+<!--  [Columns]="columns"-->
+<!--&gt;</element-table>-->
+<ul *ngFor="let c of columns">
+  {{c}}
+</ul>
+
+<li *ngFor="let repo of repositories; index as i; first as isFirst" (click)="TagList(repo)">
+  {{repo}}
+</li>
