@@ -1,18 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+const MaterialModules = [
+  MatFormFieldModule,
+  MatSliderModule,
+  MatPaginatorModule,
+];
+
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+
+
+import {AppRoutingModule} from './app-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {IndexComponent} from './index/index.component';
+import {RootComponent} from './root/root.component';
+import {ElementComponents} from './elements/elements.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    RootComponent,
+    IndexComponent,
+    RootComponent,
+    ...ElementComponents
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ...MaterialModules,
+    NgxDatatableModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
